@@ -1,0 +1,2805 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f79733c43acefd4ebe003e8f7431f688 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f79733c43acefd4ebe003e8f7431f688" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f79733c43acefd4ebe003e8f7431f688 = L.map(
+                "map_f79733c43acefd4ebe003e8f7431f688",
+                {
+                    center: [41.3, 69.27],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0e8e9c67bb99e45a32af8fef18c89adf = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "Esri, HERE, Garmin, \u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0e8e9c67bb99e45a32af8fef18c89adf.addTo(map_f79733c43acefd4ebe003e8f7431f688);
+        
+    
+            var tile_layer_833b6db595e7ffd6aa25e80bf9bb1ddc = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "Esri, HERE, Garmin, USGS, \u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            var tile_layer_c837df710a78a25830700fe3aef0b0f5 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "Esri, Maxar, Earthstar Geographics",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            var tile_layer_acd87904cfa09540799238f68b0cacdf = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_acd87904cfa09540799238f68b0cacdf.addTo(map_f79733c43acefd4ebe003e8f7431f688);
+        
+    
+            var feature_group_36a3c2aec155f50540b243ec064aec3b = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_cb584e4137ea19329c1cad007e122764 = L.circleMarker(
+                [41.3053363, 69.2732036],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_cb584e4137ea19329c1cad007e122764.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n2664870801
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd7fa1ba67c272d81b6dfd93c5215fbe = L.circleMarker(
+                [41.2794873, 69.2475345],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_fd7fa1ba67c272d81b6dfd93c5215fbe.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n4141391289
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dee076bd9b21afc1b64b49e8b21cb9b1 = L.circleMarker(
+                [41.2950106, 69.2715977],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_dee076bd9b21afc1b64b49e8b21cb9b1.bindTooltip(
+                `<div>
+                     Bon!: Bon! | Fidokor ko'chasi 40 | osm:n4192222297
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af7010574feb5a682ce4da5fcbaf2f67 = L.circleMarker(
+                [41.3235719, 69.3033702],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_af7010574feb5a682ce4da5fcbaf2f67.bindTooltip(
+                `<div>
+                     Bon!: Bon! | Oqqo'rg'on ko'chasi 14a | osm:n4443546991
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_00f70356c505c1ecd38008b623af28e5 = L.circleMarker(
+                [41.3097309, 69.2916794],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_00f70356c505c1ecd38008b623af28e5.bindTooltip(
+                `<div>
+                     Bon!: Bon! | Sodiq Azimov ko'chasi 44 | osm:n4585832689
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e5cde3de434de1415335ce8322a18ac = L.circleMarker(
+                [41.3215613, 69.255315],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_3e5cde3de434de1415335ce8322a18ac.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n5790389954
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aab3d81776781d18688249f8e03fb55d = L.circleMarker(
+                [41.3307419, 69.2843476],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_aab3d81776781d18688249f8e03fb55d.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n6072808185
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_581b4c9eefd5c1eba5692d46cce5f603 = L.circleMarker(
+                [41.2995659, 69.2776914],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_581b4c9eefd5c1eba5692d46cce5f603.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11036911867
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_34d5a3aeb22a09203819301598dc1ae0 = L.circleMarker(
+                [41.3537025, 69.3527947],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_34d5a3aeb22a09203819301598dc1ae0.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11036911868
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8f6103be32c18e03f3334d25c82148d = L.circleMarker(
+                [41.2811545, 69.2010543],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_c8f6103be32c18e03f3334d25c82148d.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11036911870
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb12a69b48cf439651913adbcc3a63bb = L.circleMarker(
+                [41.3426674, 69.2052492],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_bb12a69b48cf439651913adbcc3a63bb.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11036911871
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d7bfc87eb762951967f608ee1e55087d = L.circleMarker(
+                [41.3268026, 69.338842],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_d7bfc87eb762951967f608ee1e55087d.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11036911872
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e7fa39217aedc71c58a88ded4a16814 = L.circleMarker(
+                [41.3054747, 69.2850315],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_8e7fa39217aedc71c58a88ded4a16814.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11036911873
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b00ba760476f645df0b043fce763d4d = L.circleMarker(
+                [41.316565, 69.245236],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_7b00ba760476f645df0b043fce763d4d.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11036911874
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ac098562050b85c1db224f6cde80e7a = L.circleMarker(
+                [41.3615327, 69.2804422],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_3ac098562050b85c1db224f6cde80e7a.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11036911875
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a68fbe2db029ed5375952a6c69adff2e = L.circleMarker(
+                [41.2716355, 69.1762682],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_a68fbe2db029ed5375952a6c69adff2e.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11088799692
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7ec374a6d6f149e415310e5b8899fdf4 = L.circleMarker(
+                [41.3420968, 69.3336035],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_7ec374a6d6f149e415310e5b8899fdf4.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11104021405
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b82b93d394bbc32cf84d1e1016bddee = L.circleMarker(
+                [41.2812611, 69.2563593],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_2b82b93d394bbc32cf84d1e1016bddee.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11524251400
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7634be94eb859099cc724ee6c35a6e84 = L.circleMarker(
+                [41.2981719, 69.2493781],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_7634be94eb859099cc724ee6c35a6e84.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11524252278
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70e043c7c68fb94ec92bf9299c3bfc2f = L.circleMarker(
+                [41.3302514, 69.3243295],
+                {"bubblingMouseEvents": true, "color": "#8e44ad", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e44ad", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_36a3c2aec155f50540b243ec064aec3b);
+        
+    
+            circle_marker_70e043c7c68fb94ec92bf9299c3bfc2f.bindTooltip(
+                `<div>
+                     Bon!: Bon! | nan | osm:n11778035342
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_36a3c2aec155f50540b243ec064aec3b.addTo(map_f79733c43acefd4ebe003e8f7431f688);
+        
+    
+            var feature_group_d947e875a2737d0ad5054b076a108760 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_759984973769714c76d4d9955255d899 = L.circleMarker(
+                [41.284767, 69.2580948],
+                {"bubblingMouseEvents": true, "color": "#d35400", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d35400", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d947e875a2737d0ad5054b076a108760);
+        
+    
+            circle_marker_759984973769714c76d4d9955255d899.bindTooltip(
+                `<div>
+                     Breadly: Breadly | nan | osm:n10109407924
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e28857edd8a3d1c6019afb1e14350ee2 = L.circleMarker(
+                [41.3137541, 69.2936654],
+                {"bubblingMouseEvents": true, "color": "#d35400", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d35400", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d947e875a2737d0ad5054b076a108760);
+        
+    
+            circle_marker_e28857edd8a3d1c6019afb1e14350ee2.bindTooltip(
+                `<div>
+                     Breadly: Breadly Ecopark | nan | osm:n10856275378
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1e13c082f131a33a17c70c941fa3082a = L.circleMarker(
+                [41.317789, 69.285144],
+                {"bubblingMouseEvents": true, "color": "#d35400", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d35400", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d947e875a2737d0ad5054b076a108760);
+        
+    
+            circle_marker_1e13c082f131a33a17c70c941fa3082a.bindTooltip(
+                `<div>
+                     Breadly: Breadly Market | nan | manual:yandex.uz/maps/org/breadly_market/59138201362
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_d947e875a2737d0ad5054b076a108760.addTo(map_f79733c43acefd4ebe003e8f7431f688);
+        
+    
+            var feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_c6dcdea0384a77ede8c5c5ea1094058a = L.circleMarker(
+                [41.3635112441869, 69.27455763004208],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_c6dcdea0384a77ede8c5c5ea1094058a.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Yunusobod" | Юнусабадский район, массив Юнусабад | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_61361f5ae3bbcca479b5f5bb1011088d = L.circleMarker(
+                [41.21745421693283, 69.22504660720531],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_61361f5ae3bbcca479b5f5bb1011088d.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Sergeli" | Сергелийский район, массив Сергели, 4-й квартал, 61. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f869e90adbcb16d8beac15daa01a8c7 = L.circleMarker(
+                [41.34835681883809, 69.24803649809552],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_8f869e90adbcb16d8beac15daa01a8c7.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Olmazor City"  | Малая кольцевая дорога, 165 | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_50ebc56146ff0287bc1156366f55452d = L.circleMarker(
+                [41.33959398752266, 69.25443510894394],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_50ebc56146ff0287bc1156366f55452d.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Riviera" | Алмазарский район, ул. Нодиры, 4 (ТЦ «Ривьера»). | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81f475d1b0a6431476a2c5441df5e628 = L.circleMarker(
+                [41.31505983770007, 69.24381717294688],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_81f475d1b0a6431476a2c5441df5e628.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Bulvar" | Шайхантахурский район, ул. Укчи, 1А. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_06be1d2d9aa114774ad3cb66d1e9bd83 = L.circleMarker(
+                [41.314645100159126, 69.29038662561344],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_06be1d2d9aa114774ad3cb66d1e9bd83.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Markaz 1" | Мирзо-Улугбекский район, массив Буюк Ипак Йули, 15. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_58bb9104ea8a6dd55213f361c4f964de = L.circleMarker(
+                [41.340727611925566, 69.20430237802647],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_58bb9104ea8a6dd55213f361c4f964de.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Xuvaydo" | Шайхантахурский район, ул. Хиромий, 1. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd2b2f7fbbce311659847d4e71399592 = L.circleMarker(
+                [41.32426079236679, 69.32360642453685],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_dd2b2f7fbbce311659847d4e71399592.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Ipak Yo'li" | Мирзо-Улугбекский район, ул. Мирзо Улугбека, 51А. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8d4768c843b198e06291739445b6fe7c = L.circleMarker(
+                [41.28638295932382, 69.25277144047548],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_8d4768c843b198e06291739445b6fe7c.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Bobur" | Яккасарайский район, ул. Бабура, 40А. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2c7f2320970de916a9abdfd5f22a59d = L.circleMarker(
+                [41.29230137575165, 69.22224911312647],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_a2c7f2320970de916a9abdfd5f22a59d.bindTooltip(
+                `<div>
+                     Cake Lab: Cake lab "Novza" | "Чиланзарский район, 5-й квартал, 1/1" | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aea9f4c44abce161905ec23ec67251b0 = L.circleMarker(
+                [41.347956424632486, 69.1977329594897],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_aea9f4c44abce161905ec23ec67251b0.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Beruniy" | Алмазарский район, ул. Фараби, 2. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1c65851539462fd38aa7f3356557f0e3 = L.circleMarker(
+                [41.33272445023959, 69.28494298801037],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_1c65851539462fd38aa7f3356557f0e3.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Bodomzor" | Юнусабадский район, ул. Амира Темура, 2A. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_504d5f5f15c65595a0439b28fb2cdf0c = L.circleMarker(
+                [41.27894890627535, 69.1970664386578],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_504d5f5f15c65595a0439b28fb2cdf0c.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Shuhrat" | Учтепинский район,  массив Чиланзар, 11-й квартал, 2А. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e053fd493b83f893a057923f44fb1b3 = L.circleMarker(
+                [41.32638582141835, 69.25352120846819],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_7e053fd493b83f893a057923f44fb1b3.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Abay" | Шайхантахурский район, массив Джангох, 9. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_838561a47af48fd282e44a48482b0c71 = L.circleMarker(
+                [41.3154728324537, 69.23308142394256],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_838561a47af48fd282e44a48482b0c71.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Qoratosh" | Шайхантахурский район, ул. Коратош, 55. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f9484bf39a2e15df89f21431e357ee31 = L.circleMarker(
+                [41.296077683523485, 69.2695103981476],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5);
+        
+    
+            circle_marker_f9484bf39a2e15df89f21431e357ee31.bindTooltip(
+                `<div>
+                     Cake Lab: Cake Lab "Oybek" | Мирабадский район, ул. Шахрисабз, 27/9. | cakelab.uz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5.addTo(map_f79733c43acefd4ebe003e8f7431f688);
+        
+    
+            var feature_group_767868f32e4224cf569c77a79e023a66 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_9939101bcc33b28c231733a637bafbed = L.circleMarker(
+                [41.3413729, 69.3353973],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_9939101bcc33b28c231733a637bafbed.bindTooltip(
+                `<div>
+                     Safia: IT парк
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_626c2fc4d0fe7b666ade5478e81c4161 = L.circleMarker(
+                [41.3449438, 69.2053642],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_626c2fc4d0fe7b666ade5478e81c4161.bindTooltip(
+                `<div>
+                     Safia: S express Алпомиш
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_12ffcb25e302c1d02f2e1db9480b9108 = L.circleMarker(
+                [41.3274598, 69.3256844],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_12ffcb25e302c1d02f2e1db9480b9108.bindTooltip(
+                `<div>
+                     Safia: S express Бузбазар
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2cf5cbd628b02f518e45b800f077b049 = L.circleMarker(
+                [41.3278199, 69.3286404],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_2cf5cbd628b02f518e45b800f077b049.bindTooltip(
+                `<div>
+                     Safia: S express Максим Горький
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ad9b8c31f1418eeccf611e063af0d1c4 = L.circleMarker(
+                [41.3204131, 69.354631],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_ad9b8c31f1418eeccf611e063af0d1c4.bindTooltip(
+                `<div>
+                     Safia: S express Олтин тепа
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60b3c30334e816dd7bfd039ab5173d24 = L.circleMarker(
+                [41.3163584, 69.2524123],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_60b3c30334e816dd7bfd039ab5173d24.bindTooltip(
+                `<div>
+                     Safia: S express Сити молл
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_597c4f438cbef718be43c4d78ae2d928 = L.circleMarker(
+                [41.3252819, 69.232339],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_597c4f438cbef718be43c4d78ae2d928.bindTooltip(
+                `<div>
+                     Safia: S express Чорсу
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89f55fc8e757a28d24e63ee327bc9aa7 = L.circleMarker(
+                [41.2209519, 69.223191],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_89f55fc8e757a28d24e63ee327bc9aa7.bindTooltip(
+                `<div>
+                     Safia: S express Янги-Сергени
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fee0acf91e4b189021debf64773cd8b1 = L.circleMarker(
+                [41.3159964, 69.3533787],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_fee0acf91e4b189021debf64773cd8b1.bindTooltip(
+                `<div>
+                     Safia: Авайхон
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_496e96ceae77e4b26491d20d5e6e815c = L.circleMarker(
+                [41.2294092, 69.2186459],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_496e96ceae77e4b26491d20d5e6e815c.bindTooltip(
+                `<div>
+                     Safia: Авторынок
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6c789ad9cfe552f7688c169613970b18 = L.circleMarker(
+                [41.326595, 69.304949],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_6c789ad9cfe552f7688c169613970b18.bindTooltip(
+                `<div>
+                     Safia: Аккурган
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3358ba657a63756697afe75b4052a3cf = L.circleMarker(
+                [41.2633374, 69.1617589],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_3358ba657a63756697afe75b4052a3cf.bindTooltip(
+                `<div>
+                     Safia: Алгоритм
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80634e2074f8ed7c1c9c462cd1557050 = L.circleMarker(
+                [41.3595721, 69.2150709],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_80634e2074f8ed7c1c9c462cd1557050.bindTooltip(
+                `<div>
+                     Safia: Ало
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c5fdb1a0f767ccd95b338f2690e878a4 = L.circleMarker(
+                [41.2687041, 69.1904187],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_c5fdb1a0f767ccd95b338f2690e878a4.bindTooltip(
+                `<div>
+                     Safia: Аль-Хорезми
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7236635a6deed64472b16388ba85d9a5 = L.circleMarker(
+                [41.3195029, 69.2798888],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_7236635a6deed64472b16388ba85d9a5.bindTooltip(
+                `<div>
+                     Safia: Ардус
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e6ec31594d240209c450b50da28547c = L.circleMarker(
+                [41.2846567, 69.2035103],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_8e6ec31594d240209c450b50da28547c.bindTooltip(
+                `<div>
+                     Safia: Атлас
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b142385ec4afdc116e5fa0cc57c27a62 = L.circleMarker(
+                [41.2811868, 69.2010397],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_b142385ec4afdc116e5fa0cc57c27a62.bindTooltip(
+                `<div>
+                     Safia: Атлас ТЦ (Шухрат)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a91163ee21c6ac82b4b64ca5ac60b8b9 = L.circleMarker(
+                [41.26302, 69.153976],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_a91163ee21c6ac82b4b64ca5ac60b8b9.bindTooltip(
+                `<div>
+                     Safia: Ахмад
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_84e071d80368f7010a12976afbd74c47 = L.circleMarker(
+                [41.2836388, 69.3347611],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_84e071d80368f7010a12976afbd74c47.bindTooltip(
+                `<div>
+                     Safia: Ашрафи
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_528239ff3b1e21d33768249bb4510949 = L.circleMarker(
+                [41.269189, 69.262476],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_528239ff3b1e21d33768249bb4510949.bindTooltip(
+                `<div>
+                     Safia: Аэропорт
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e517fbcddae224836d9f130ae740d562 = L.circleMarker(
+                [41.339704, 69.29376],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_e517fbcddae224836d9f130ae740d562.bindTooltip(
+                `<div>
+                     Safia: Бадамзар
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b48048d337051ef725932dc85861cd3 = L.circleMarker(
+                [41.3401594, 69.1725147],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_9b48048d337051ef725932dc85861cd3.bindTooltip(
+                `<div>
+                     Safia: Бельтепа
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_248fe188a72bce5a7d53eefc907a2036 = L.circleMarker(
+                [41.3086688, 69.1644584],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_248fe188a72bce5a7d53eefc907a2036.bindTooltip(
+                `<div>
+                     Safia: Бешкайрагач
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89555324144b86da13525f2bf15c289d = L.circleMarker(
+                [41.2700516, 69.2632437],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_89555324144b86da13525f2bf15c289d.bindTooltip(
+                `<div>
+                     Safia: Бобур-МКАД
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_29eecf1d0dd898b4ecddfde3c7c8cfa5 = L.circleMarker(
+                [41.3114807, 69.31253],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_29eecf1d0dd898b4ecddfde3c7c8cfa5.bindTooltip(
+                `<div>
+                     Safia: Боткина
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_edf5df807666e09c2b36e836e23ad16a = L.circleMarker(
+                [41.3163832, 69.2452273],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_edf5df807666e09c2b36e836e23ad16a.bindTooltip(
+                `<div>
+                     Safia: Бульвар
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b21ed81c196b817b9da47cf2b6d66d39 = L.circleMarker(
+                [41.2697962, 69.2010252],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_b21ed81c196b817b9da47cf2b6d66d39.bindTooltip(
+                `<div>
+                     Safia: Бунёдкор
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0077643f04b3934f552a2be26813f924 = L.circleMarker(
+                [41.2779067, 69.1749574],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_0077643f04b3934f552a2be26813f924.bindTooltip(
+                `<div>
+                     Safia: Ватан
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9d03dddb557a78eeb68b46a37dc86027 = L.circleMarker(
+                [41.2599023, 69.2234659],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_9d03dddb557a78eeb68b46a37dc86027.bindTooltip(
+                `<div>
+                     Safia: Вега
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d2a76edc20631ef756ae6bd1123c0a75 = L.circleMarker(
+                [41.2549545, 69.3748907],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_d2a76edc20631ef756ae6bd1123c0a75.bindTooltip(
+                `<div>
+                     Safia: Водник
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_152ec9dc68ebe61c0a6c098b31dcbe89 = L.circleMarker(
+                [41.2829869, 69.2225542],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_152ec9dc68ebe61c0a6c098b31dcbe89.bindTooltip(
+                `<div>
+                     Safia: Гагарин
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bab24119d36c0d42b5415eeb11138fa5 = L.circleMarker(
+                [41.328578, 69.249245],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_bab24119d36c0d42b5415eeb11138fa5.bindTooltip(
+                `<div>
+                     Safia: Ганга
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_488f61ad10e005a11d660f033d1b235b = L.circleMarker(
+                [41.3719587, 69.3183329],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_488f61ad10e005a11d660f033d1b235b.bindTooltip(
+                `<div>
+                     Safia: Гвардейская
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c5e2594344554ecfc3940ea8b00247cc = L.circleMarker(
+                [41.273169, 69.277963],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_c5e2594344554ecfc3940ea8b00247cc.bindTooltip(
+                `<div>
+                     Safia: Гейдар Алиева
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a3f3f2a3aceeea6c1640de4fdf4155ac = L.circleMarker(
+                [41.282421, 69.2619221],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_a3f3f2a3aceeea6c1640de4fdf4155ac.bindTooltip(
+                `<div>
+                     Safia: Глинка
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f76d999a5ab93d54a1cf793e8e2cd755 = L.circleMarker(
+                [41.2714404, 69.1761001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_f76d999a5ab93d54a1cf793e8e2cd755.bindTooltip(
+                `<div>
+                     Safia: Глобус
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70562a0debb780c13f96d4305ea58e37 = L.circleMarker(
+                [41.2973267, 69.2686504],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_70562a0debb780c13f96d4305ea58e37.bindTooltip(
+                `<div>
+                     Safia: Грандмир
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e96dccf398e07f5ebb1f97791efd1b3 = L.circleMarker(
+                [41.3223979, 69.2160811],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_6e96dccf398e07f5ebb1f97791efd1b3.bindTooltip(
+                `<div>
+                     Safia: Гулобод
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c030c1913b12351db155f63078b9190 = L.circleMarker(
+                [41.3206034, 69.2829464],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_0c030c1913b12351db155f63078b9190.bindTooltip(
+                `<div>
+                     Safia: Гёте
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_77ab1ed0a8fde711f5e967e02ca9d9ea = L.circleMarker(
+                [41.3163412, 69.2902288],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_77ab1ed0a8fde711f5e967e02ca9d9ea.bindTooltip(
+                `<div>
+                     Safia: Дархан
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_47fdefad685d557970c1d533f5b2fb9f = L.circleMarker(
+                [41.385176, 69.2627411],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_47fdefad685d557970c1d533f5b2fb9f.bindTooltip(
+                `<div>
+                     Safia: Для предзаказов 2026
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a6f89c69c5f11fecbf97da95b0815a4 = L.circleMarker(
+                [41.2700621, 69.2107816],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_7a6f89c69c5f11fecbf97da95b0815a4.bindTooltip(
+                `<div>
+                     Safia: Домбрабад
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3273bcb00dbdcef1ded1111a80ba7781 = L.circleMarker(
+                [41.281596, 69.2175114],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_3273bcb00dbdcef1ded1111a80ba7781.bindTooltip(
+                `<div>
+                     Safia: Дрим парк
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5fe38e04fac41fbc40e3e21e83bd230d = L.circleMarker(
+                [41.3112946, 69.2442181],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_5fe38e04fac41fbc40e3e21e83bd230d.bindTooltip(
+                `<div>
+                     Safia: Дружба
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_739c5b2ed3947c1c9156baa3a0684ace = L.circleMarker(
+                [41.2618371, 69.2672007],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_739c5b2ed3947c1c9156baa3a0684ace.bindTooltip(
+                `<div>
+                     Safia: Дьюти-фри
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ab47f239bc1575c6959d3136719c3cdb = L.circleMarker(
+                [41.3609959, 69.2393844],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_ab47f239bc1575c6959d3136719c3cdb.bindTooltip(
+                `<div>
+                     Safia: Жомий
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2cb2e8c068621d3b891285d1456c9a9b = L.circleMarker(
+                [41.3250811, 69.240285],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_2cb2e8c068621d3b891285d1456c9a9b.bindTooltip(
+                `<div>
+                     Safia: Заркайнар
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_86d9aad698ee4c0467ef12655a3be690 = L.circleMarker(
+                [41.3749484, 69.2710409],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_86d9aad698ee4c0467ef12655a3be690.bindTooltip(
+                `<div>
+                     Safia: Зенит
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_546ef6e6a17e87bf31669c0f00258fa7 = L.circleMarker(
+                [41.3357757, 69.3235378],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_546ef6e6a17e87bf31669c0f00258fa7.bindTooltip(
+                `<div>
+                     Safia: Зиелилар
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cbf41d20841047ef5075183b91e3ea0e = L.circleMarker(
+                [41.3356655, 69.1777751],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_cbf41d20841047ef5075183b91e3ea0e.bindTooltip(
+                `<div>
+                     Safia: Ибн Сино (Жарарық)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b942a0fdcfede66ea6208ed4a80d08b8 = L.circleMarker(
+                [41.2834306, 69.1648891],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_b942a0fdcfede66ea6208ed4a80d08b8.bindTooltip(
+                `<div>
+                     Safia: Изза
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a4de73c4c993c95f6a600f7f6eca49df = L.circleMarker(
+                [41.2755145, 69.204039],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_a4de73c4c993c95f6a600f7f6eca49df.bindTooltip(
+                `<div>
+                     Safia: Интегро Чиланзар
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e394338f08836adb0ee81fe2d199bf18 = L.circleMarker(
+                [41.3386418, 69.334791],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_e394338f08836adb0ee81fe2d199bf18.bindTooltip(
+                `<div>
+                     Safia: Инха
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80f7950efb8aed8af43a884dca67f59b = L.circleMarker(
+                [41.2899049, 69.3437448],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_80f7950efb8aed8af43a884dca67f59b.bindTooltip(
+                `<div>
+                     Safia: Кадышева
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_acb7408d6b177e3c3523ef3992855a6b = L.circleMarker(
+                [41.308576, 69.2379934],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_acb7408d6b177e3c3523ef3992855a6b.bindTooltip(
+                `<div>
+                     Safia: Камолон
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_73134e5112c2261907221091bd7805b8 = L.circleMarker(
+                [41.3489547, 69.2393654],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_73134e5112c2261907221091bd7805b8.bindTooltip(
+                `<div>
+                     Safia: Карасарай
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e5fbcf84de0841e283bdee0736eaea7 = L.circleMarker(
+                [41.3593056, 69.2250392],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_8e5fbcf84de0841e283bdee0736eaea7.bindTooltip(
+                `<div>
+                     Safia: Коммунизм
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e53f82a12ccc01b81dce67ad97140848 = L.circleMarker(
+                [41.2386674, 69.3279379],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_e53f82a12ccc01b81dce67ad97140848.bindTooltip(
+                `<div>
+                     Safia: Компас
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_315c2995ff3938705bc3eafe82d65c2a = L.circleMarker(
+                [41.335056, 69.3704157],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_315c2995ff3938705bc3eafe82d65c2a.bindTooltip(
+                `<div>
+                     Safia: Корасув
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_054e50d71a171d3ac4ff72bc5716f595 = L.circleMarker(
+                [41.2925886, 69.3567985],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_054e50d71a171d3ac4ff72bc5716f595.bindTooltip(
+                `<div>
+                     Safia: Крестик
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ddfa2632884e4395d2dacb7ef505aaf5 = L.circleMarker(
+                [41.321723, 69.2028243],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_ddfa2632884e4395d2dacb7ef505aaf5.bindTooltip(
+                `<div>
+                     Safia: Кукча
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7a5a940186bf30359c04f6008c0d81a = L.circleMarker(
+                [41.2160082, 69.2011305],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_f7a5a940186bf30359c04f6008c0d81a.bindTooltip(
+                `<div>
+                     Safia: Кургантепа
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e8e67a17b2e9ee1d6a973a50fdcdbc70 = L.circleMarker(
+                [41.2678974, 69.2467508],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_e8e67a17b2e9ee1d6a973a50fdcdbc70.bindTooltip(
+                `<div>
+                     Safia: Кушбеги
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e19b463340147dab0647f07866e3954 = L.circleMarker(
+                [41.3270494, 69.263575],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_7e19b463340147dab0647f07866e3954.bindTooltip(
+                `<div>
+                     Safia: Лабзак
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b8e31ade02b05999fef8b6439a7037cd = L.circleMarker(
+                [41.3330308, 69.2980192],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_b8e31ade02b05999fef8b6439a7037cd.bindTooltip(
+                `<div>
+                     Safia: Лакокраска
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5b19e37160de703a31b03adb9d5b1be4 = L.circleMarker(
+                [41.3370114, 69.3555385],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_5b19e37160de703a31b03adb9d5b1be4.bindTooltip(
+                `<div>
+                     Safia: Луначарский
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_865c984526758936268cf30021611eb9 = L.circleMarker(
+                [41.3267102, 69.3351645],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_865c984526758936268cf30021611eb9.bindTooltip(
+                `<div>
+                     Safia: Максим Горький
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0bd75cb182eb39a40b0c8311e402588b = L.circleMarker(
+                [41.3423547, 69.2657623],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_0bd75cb182eb39a40b0c8311e402588b.bindTooltip(
+                `<div>
+                     Safia: Малика
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_27dffc6ab13314f6880fe46a9f8ea045 = L.circleMarker(
+                [41.245124, 69.310295],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_27dffc6ab13314f6880fe46a9f8ea045.bindTooltip(
+                `<div>
+                     Safia: Матонат (Куйлюк-1)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_315650612693224dedf11c4285766cd0 = L.circleMarker(
+                [41.3700438, 69.2254025],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_315650612693224dedf11c4285766cd0.bindTooltip(
+                `<div>
+                     Safia: Мевазор
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43ce8e7273be232611eeb416ef6d3e0b = L.circleMarker(
+                [41.3670649, 69.2915122],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_43ce8e7273be232611eeb416ef6d3e0b.bindTooltip(
+                `<div>
+                     Safia: Мега Планет
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72a44eaf365f0d12b5cde4de3de21809 = L.circleMarker(
+                [41.3625886, 69.1873748],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_72a44eaf365f0d12b5cde4de3de21809.bindTooltip(
+                `<div>
+                     Safia: Медгородок
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_422be9f38744cc16dfdd5c338336e026 = L.circleMarker(
+                [41.2876707, 69.2847718],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_422be9f38744cc16dfdd5c338336e026.bindTooltip(
+                `<div>
+                     Safia: Мехржон
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c633b1da215987dfa91627835ed21dcf = L.circleMarker(
+                [41.3272514, 69.2852065],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_c633b1da215987dfa91627835ed21dcf.bindTooltip(
+                `<div>
+                     Safia: Минор
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b47c29b0aca6c02310cda9e8b1f439e = L.circleMarker(
+                [41.2979416, 69.2494525],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_3b47c29b0aca6c02310cda9e8b1f439e.bindTooltip(
+                `<div>
+                     Safia: Некст
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f82f3f140dc4aa214e9a209ec0879380 = L.circleMarker(
+                [41.2911599, 69.223855],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_f82f3f140dc4aa214e9a209ec0879380.bindTooltip(
+                `<div>
+                     Safia: Новза
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9cfd82bb5ae8cb37833f0575e1a9274f = L.circleMarker(
+                [41.3337537, 69.266923],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_9cfd82bb5ae8cb37833f0575e1a9274f.bindTooltip(
+                `<div>
+                     Safia: Нурафшон
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5d41a10504c931dd7092a9bb691d0194 = L.circleMarker(
+                [41.2899656, 69.2593292],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_5d41a10504c931dd7092a9bb691d0194.bindTooltip(
+                `<div>
+                     Safia: Океан
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_42d332342c873f91f5b054061c43a8f8 = L.circleMarker(
+                [41.3124332, 69.3327116],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_42d332342c873f91f5b054061c43a8f8.bindTooltip(
+                `<div>
+                     Safia: Паркентский
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a6c383f665feb8c9d18dab05ef92570f = L.circleMarker(
+                [41.2903078, 69.2094813],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_a6c383f665feb8c9d18dab05ef92570f.bindTooltip(
+                `<div>
+                     Safia: Парус (Чиланзар)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f219d86248bd0e5442a5113496251dc8 = L.circleMarker(
+                [41.2751571, 69.2238588],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_f219d86248bd0e5442a5113496251dc8.bindTooltip(
+                `<div>
+                     Safia: Пионерская
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c97a1bf63196c9b894ae09ccd4d5c69e = L.circleMarker(
+                [41.311284, 69.2740783],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_c97a1bf63196c9b894ae09ccd4d5c69e.bindTooltip(
+                `<div>
+                     Safia: Пойтахт
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8bc7941050de8e5415087e989f1961b4 = L.circleMarker(
+                [41.2887987, 69.2426332],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_8bc7941050de8e5415087e989f1961b4.bindTooltip(
+                `<div>
+                     Safia: Ракат
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_399b3dbdaf3f20a610ae7922668e4bc5 = L.circleMarker(
+                [41.2724934, 69.3082041],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_399b3dbdaf3f20a610ae7922668e4bc5.bindTooltip(
+                `<div>
+                     Safia: Рисовый
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2606e2211515800f7cdaffd0a10a7188 = L.circleMarker(
+                [41.3062112, 69.2913941],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_2606e2211515800f7cdaffd0a10a7188.bindTooltip(
+                `<div>
+                     Safia: Садык Азимов
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b3767e2d23d3f61f27387fd9afa25c1 = L.circleMarker(
+                [41.3735377, 69.3077899],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_2b3767e2d23d3f61f27387fd9afa25c1.bindTooltip(
+                `<div>
+                     Safia: Сайрам
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ec45830b7dedda69ba75dd8533d2f6c0 = L.circleMarker(
+                [41.3549645, 69.3337706],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_ec45830b7dedda69ba75dd8533d2f6c0.bindTooltip(
+                `<div>
+                     Safia: СамПИ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44fb072ac90a6dc9ade72c42b63d460d = L.circleMarker(
+                [41.278394, 69.2862656],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_44fb072ac90a6dc9ade72c42b63d460d.bindTooltip(
+                `<div>
+                     Safia: Саракулька
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea48981ab6c28faed5682ea116a8f137 = L.circleMarker(
+                [41.3352845, 69.2536086],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_ea48981ab6c28faed5682ea116a8f137.bindTooltip(
+                `<div>
+                     Safia: Себзор
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_be48742ec409bf09df59ffc53d816720 = L.circleMarker(
+                [41.2160519, 69.2261065],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_be48742ec409bf09df59ffc53d816720.bindTooltip(
+                `<div>
+                     Safia: Сергели
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4166f43558204ba801294a9045884c6 = L.circleMarker(
+                [41.2696522, 69.2027842],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_f4166f43558204ba801294a9045884c6.bindTooltip(
+                `<div>
+                     Safia: Сингапурский
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9350145965b9b3d093b6cf5061ca74ce = L.circleMarker(
+                [41.3156561, 69.2529646],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_9350145965b9b3d093b6cf5061ca74ce.bindTooltip(
+                `<div>
+                     Safia: Сити Молл 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2e429489c8e0fddee2ca12f2de931623 = L.circleMarker(
+                [41.1962513, 69.2150719],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_2e429489c8e0fddee2ca12f2de931623.bindTooltip(
+                `<div>
+                     Safia: Спутник
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9462fdacd4b5a4e923af502ec2cbea20 = L.circleMarker(
+                [41.3579761, 69.3848276],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_9462fdacd4b5a4e923af502ec2cbea20.bindTooltip(
+                `<div>
+                     Safia: ТТЗ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d820f7892a70e9d750c391c14c9718f = L.circleMarker(
+                [41.3646725, 69.2062059],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_7d820f7892a70e9d750c391c14c9718f.bindTooltip(
+                `<div>
+                     Safia: Тансыкбаев
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2771eb56f95c05ad1f7a5a975aa5e6d = L.circleMarker(
+                [41.3156764, 69.2526758],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_a2771eb56f95c05ad1f7a5a975aa5e6d.bindTooltip(
+                `<div>
+                     Safia: Ташкент Сити
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c73c75d2fc1f2c0e8e6bb2baaa8883a = L.circleMarker(
+                [41.3490123, 69.1762503],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_0c73c75d2fc1f2c0e8e6bb2baaa8883a.bindTooltip(
+                `<div>
+                     Safia: Ташми
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8d747c9bdf5928090d48956f7e6ef985 = L.circleMarker(
+                [41.3482205, 69.2851862],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_8d747c9bdf5928090d48956f7e6ef985.bindTooltip(
+                `<div>
+                     Safia: Телебашня
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_52678a58d6f26fa6a5458686d8881098 = L.circleMarker(
+                [41.334061, 69.217181],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_52678a58d6f26fa6a5458686d8881098.bindTooltip(
+                `<div>
+                     Safia: Тинчлик
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cba6d1f7906fd460b62413ef21d25b2a = L.circleMarker(
+                [41.349923, 69.21783],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_cba6d1f7906fd460b62413ef21d25b2a.bindTooltip(
+                `<div>
+                     Safia: Турин
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e45cf20e670cb03465fd95871871c3ad = L.circleMarker(
+                [41.2875686, 69.3033558],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_e45cf20e670cb03465fd95871871c3ad.bindTooltip(
+                `<div>
+                     Safia: УзБум
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f9efcf92c6b75cbf2ed4f5d44701cfe9 = L.circleMarker(
+                [41.312922, 69.1833564],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_f9efcf92c6b75cbf2ed4f5d44701cfe9.bindTooltip(
+                `<div>
+                     Safia: Уй базар
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fdc78a346810781f20ea43ca9d4f81b3 = L.circleMarker(
+                [41.2869123, 69.1485214],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_fdc78a346810781f20ea43ca9d4f81b3.bindTooltip(
+                `<div>
+                     Safia: Урикзор
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3509bb81971e4fa58dfbc293abecee6 = L.circleMarker(
+                [41.3785883, 69.2892164],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_b3509bb81971e4fa58dfbc293abecee6.bindTooltip(
+                `<div>
+                     Safia: Уч Кахрамон
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_603c26a2fd8f6e2ef4923bf5fc7ab1b4 = L.circleMarker(
+                [41.2972903, 69.1789215],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_603c26a2fd8f6e2ef4923bf5fc7ab1b4.bindTooltip(
+                `<div>
+                     Safia: Фабрика
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6350ee1a9f213cd3a3dab78b12fb4355 = L.circleMarker(
+                [41.2622015, 69.3165815],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_6350ee1a9f213cd3a3dab78b12fb4355.bindTooltip(
+                `<div>
+                     Safia: Файзиабад
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5c72b67bc2912a0923afeb6be1f6053 = L.circleMarker(
+                [41.2854341, 69.1868866],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_b5c72b67bc2912a0923afeb6be1f6053.bindTooltip(
+                `<div>
+                     Safia: Фархадский
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e44bf09a4dae0d79f776cbab5878242f = L.circleMarker(
+                [41.3547223, 69.3684098],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_e44bf09a4dae0d79f776cbab5878242f.bindTooltip(
+                `<div>
+                     Safia: Феруза
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d3648b95618e09e299e979f5ea2ebe82 = L.circleMarker(
+                [41.2969692, 69.1794877],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_d3648b95618e09e299e979f5ea2ebe82.bindTooltip(
+                `<div>
+                     Safia: Фозилтепа
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d1323d8cf72d55c02000594ec7c65eb = L.circleMarker(
+                [41.3412356, 69.2423932],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_0d1323d8cf72d55c02000594ec7c65eb.bindTooltip(
+                `<div>
+                     Safia: Хаст-Имам
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ce39c4cfb8bc708522c0ba328d493df0 = L.circleMarker(
+                [41.3416295, 69.2047199],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_ce39c4cfb8bc708522c0ba328d493df0.bindTooltip(
+                `<div>
+                     Safia: Хувайдо
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_060cd702d54e4e1065cd131cae8a7979 = L.circleMarker(
+                [41.3045133, 69.269795],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_060cd702d54e4e1065cd131cae8a7979.bindTooltip(
+                `<div>
+                     Safia: Цум
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5dd0c8c537f0192a666b8414411c5295 = L.circleMarker(
+                [41.3389278, 69.2206563],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_5dd0c8c537f0192a666b8414411c5295.bindTooltip(
+                `<div>
+                     Safia: Чигатой
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b8d4e4050d2ac3512a96826d167f768 = L.circleMarker(
+                [41.3559046, 69.3110212],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_0b8d4e4050d2ac3512a96826d167f768.bindTooltip(
+                `<div>
+                     Safia: Чинабад (High town)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf492171e7a1cb40cde19d6fb29de48f = L.circleMarker(
+                [41.3207368, 69.2350718],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_bf492171e7a1cb40cde19d6fb29de48f.bindTooltip(
+                `<div>
+                     Safia: Чорсу
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b93e954f7b2ced9cc43f50cf89c09613 = L.circleMarker(
+                [41.3537795, 69.2886858],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_b93e954f7b2ced9cc43f50cf89c09613.bindTooltip(
+                `<div>
+                     Safia: Шахристан
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_103e672a4eed5ae331fb35d8b9e36231 = L.circleMarker(
+                [41.272736, 69.2401629],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_103e672a4eed5ae331fb35d8b9e36231.bindTooltip(
+                `<div>
+                     Safia: Шота Руставели
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e88d53249630914f13be528f10a13d49 = L.circleMarker(
+                [41.27351, 69.3461662],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_e88d53249630914f13be528f10a13d49.bindTooltip(
+                `<div>
+                     Safia: Шохимардон
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dac9c7f44062147c190155ea694a9ddd = L.circleMarker(
+                [41.3597696, 69.276581],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_dac9c7f44062147c190155ea694a9ddd.bindTooltip(
+                `<div>
+                     Safia: Шохсарой
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_58198b88df71be23810970b9df98d73c = L.circleMarker(
+                [41.3220107, 69.1789292],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_58198b88df71be23810970b9df98d73c.bindTooltip(
+                `<div>
+                     Safia: Штаб
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_943245afe9a35fab9e1efc1943d929df = L.circleMarker(
+                [41.3535023, 69.3511014],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_943245afe9a35fab9e1efc1943d929df.bindTooltip(
+                `<div>
+                     Safia: Эко
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f94bb9796a9703e23095373cd8296d7c = L.circleMarker(
+                [41.2477194, 69.3018333],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_f94bb9796a9703e23095373cd8296d7c.bindTooltip(
+                `<div>
+                     Safia: Янги Куйлюк 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6124123bbbe61333cfbb103c6870b88d = L.circleMarker(
+                [41.223144, 69.209046],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_767868f32e4224cf569c77a79e023a66);
+        
+    
+            circle_marker_6124123bbbe61333cfbb103c6870b88d.bindTooltip(
+                `<div>
+                     Safia: Янгихаёт
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_24a196da60dee8662ae25b73fb7acce7_layers = {
+                base_layers : {
+                    "Light" : tile_layer_0e8e9c67bb99e45a32af8fef18c89adf,
+                    "Streets" : tile_layer_833b6db595e7ffd6aa25e80bf9bb1ddc,
+                    "Satellite" : tile_layer_c837df710a78a25830700fe3aef0b0f5,
+                },
+                overlays :  {
+                    "Bon! (20)" : feature_group_36a3c2aec155f50540b243ec064aec3b,
+                    "Breadly (3)" : feature_group_d947e875a2737d0ad5054b076a108760,
+                    "Cake Lab (16)" : feature_group_5c926c9efe61f1d1861ef91bb4e7bcc5,
+                    "Safia (123)" : feature_group_767868f32e4224cf569c77a79e023a66,
+                },
+            };
+            let layer_control_24a196da60dee8662ae25b73fb7acce7 = L.control.layers(
+                layer_control_24a196da60dee8662ae25b73fb7acce7_layers.base_layers,
+                layer_control_24a196da60dee8662ae25b73fb7acce7_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_f79733c43acefd4ebe003e8f7431f688);
+
+        
+</script>
+</html>

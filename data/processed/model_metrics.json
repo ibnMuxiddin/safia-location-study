@@ -1,0 +1,140 @@
+{
+  "n_cells": 493,
+  "positives": 107,
+  "prevalence": 0.21703853955375255,
+  "cv": "20 x GroupKFold(5) over H3 res-6 blocks, 2-ring buffer",
+  "chosen_model": "logreg__no_competitor",
+  "features": [
+    "n_university",
+    "n_university_k1",
+    "n_school",
+    "n_school_k1",
+    "n_metro",
+    "n_metro_k1",
+    "n_bus_stop",
+    "n_bus_stop_k1",
+    "n_office",
+    "n_office_k1",
+    "n_mall",
+    "n_mall_k1",
+    "n_supermarket",
+    "n_supermarket_k1",
+    "n_hospital",
+    "n_hospital_k1",
+    "n_apartments",
+    "n_apartments_k1",
+    "n_cafe",
+    "n_cafe_k1",
+    "n_apartment_levels",
+    "n_apartment_levels_k1",
+    "district_density",
+    "dist_centre_km",
+    "nonres_share"
+  ],
+  "results": [
+    {
+      "model": "logreg__no_competitor",
+      "n_features": 25,
+      "spatial_roc_auc": 0.8652,
+      "spatial_pr_auc": 0.5895,
+      "repeat_roc_auc_std": 0.0059,
+      "repeat_pr_auc_std": 0.0148,
+      "fold_roc_auc_std": 0.0766,
+      "fold_pr_auc_std": 0.0506,
+      "nobuffer_roc_auc": 0.8683,
+      "nobuffer_pr_auc": 0.5983,
+      "random_roc_auc": 0.866,
+      "random_pr_auc": 0.5997
+    },
+    {
+      "model": "lgbm__no_competitor",
+      "n_features": 25,
+      "spatial_roc_auc": 0.8554,
+      "spatial_pr_auc": 0.5948,
+      "repeat_roc_auc_std": 0.0055,
+      "repeat_pr_auc_std": 0.0146,
+      "fold_roc_auc_std": 0.1014,
+      "fold_pr_auc_std": 0.0685,
+      "nobuffer_roc_auc": 0.8622,
+      "nobuffer_pr_auc": 0.5902,
+      "random_roc_auc": 0.8455,
+      "random_pr_auc": 0.5699
+    },
+    {
+      "model": "logreg__with_competitor",
+      "n_features": 26,
+      "spatial_roc_auc": 0.8643,
+      "spatial_pr_auc": 0.5894,
+      "repeat_roc_auc_std": 0.0069,
+      "repeat_pr_auc_std": 0.0172,
+      "fold_roc_auc_std": 0.0794,
+      "fold_pr_auc_std": 0.0441,
+      "nobuffer_roc_auc": 0.8691,
+      "nobuffer_pr_auc": 0.604,
+      "random_roc_auc": 0.8662,
+      "random_pr_auc": 0.6058
+    },
+    {
+      "model": "lgbm__with_competitor",
+      "n_features": 26,
+      "spatial_roc_auc": 0.8553,
+      "spatial_pr_auc": 0.5956,
+      "repeat_roc_auc_std": 0.0039,
+      "repeat_pr_auc_std": 0.0096,
+      "fold_roc_auc_std": 0.1002,
+      "fold_pr_auc_std": 0.0785,
+      "nobuffer_roc_auc": 0.8613,
+      "nobuffer_pr_auc": 0.5828,
+      "random_roc_auc": 0.8418,
+      "random_pr_auc": 0.5519
+    }
+  ],
+  "chosen_folds": [
+    {
+      "fold": 0,
+      "n": 97,
+      "pos": 16,
+      "train": 276,
+      "train_dropped": 120,
+      "roc_auc": 0.8997,
+      "pr_auc": 0.5511
+    },
+    {
+      "fold": 1,
+      "n": 97,
+      "pos": 5,
+      "train": 276,
+      "train_dropped": 120,
+      "roc_auc": 0.9783,
+      "pr_auc": 0.6087
+    },
+    {
+      "fold": 2,
+      "n": 102,
+      "pos": 27,
+      "train": 288,
+      "train_dropped": 103,
+      "roc_auc": 0.8454,
+      "pr_auc": 0.6498
+    },
+    {
+      "fold": 3,
+      "n": 101,
+      "pos": 34,
+      "train": 292,
+      "train_dropped": 100,
+      "roc_auc": 0.7687,
+      "pr_auc": 0.661
+    },
+    {
+      "fold": 4,
+      "n": 96,
+      "pos": 25,
+      "train": 297,
+      "train_dropped": 100,
+      "roc_auc": 0.8648,
+      "pr_auc": 0.677
+    }
+  ],
+  "competitor_flag_gain_pr_auc": -0.0001
+}

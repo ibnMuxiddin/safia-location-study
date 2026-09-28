@@ -1,0 +1,8 @@
+h3,list,rank_when_checked,verdict,note,checked_on
+8820a1966bfffff,top10,1,ok,User (Yandex satellite): urban area,2026-09-28
+8820a52d13fffff,top10,3,ok,User (Yandex satellite): urban area,2026-09-28
+8820a190d9fffff,top10,9,ok,User (Yandex satellite): urban area,2026-09-28
+8820a19221fffff,coverage,C2,ok,User (Yandex satellite): urban area,2026-09-28
+8820a190e7fffff,coverage,C5,rejected,"User (Yandex satellite): the cell centre is cropland. It lies behind the newly built FoodCity trade complex near Qo'yliq, by the road. FoodCity is not in OSM yet.",2026-09-28
+8820a19303fffff,coverage,C5,ok,User (Yandex satellite): urban area (replacement for the rejected C5),2026-09-28
+8820a192d3fffff,coverage,C5,ok,User (Yandex satellite): urban area (new C5 after the buffered repeated CV),2026-09-28
