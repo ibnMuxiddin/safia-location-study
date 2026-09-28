@@ -31,6 +31,7 @@ from config import DATA_INTERIM, DATA_PROCESSED, DATA_RAW, OUTPUTS_FIGURES, REPO
 
 AUTHOR = "Azizbek Sunnatov"
 REPO_URL = "github.com/ibnMuxiddin/safia-location-study"
+MAP_URL = "ibnmuxiddin.github.io/safia-location-study/outputs/maps/safia_whitespace.html"
 MAP_PNG = OUTPUTS_FIGURES / "12_report_map.png"
 RED, PURPLE, GREY = "#c0392b", "#8e44ad", "#555555"
 SCORE_COLORS = ["#f7f7f7", "#fde0c5", "#f9a870", "#e8603c", "#b2182b"]
@@ -173,7 +174,7 @@ def texts(lang: str, f: dict, m: dict, checks: pd.DataFrame) -> dict:
                      f"<b>Kannibalizatsiya:</b> {f['safia_close_pairs']} filialning {f['overlap_m']} m ichida boshqa Safia bor — "
                      "sotuvga ta'sirini o'lchash.",
                      "<b>Janub (C1–C5):</b> mavjud janubiy filiallar sotuvi bo'yicha talabni baholash."],
-            "foot": f"Kod, interaktiv xarita (uz/ru) va ma'lumotlar: <b>{REPO_URL}</b>. "
+            "foot": f"Interaktiv xarita (uz/ru): <b>{MAP_URL}</b>. Kod va ma'lumotlar: <b>{REPO_URL}</b>. "
                     "Manbalar: safiabakery.uz, cakelab.uz, OpenStreetMap, Toshkent shahar statistika boshqarmasi (2023).",
         }
     return {
@@ -219,7 +220,7 @@ def texts(lang: str, f: dict, m: dict, checks: pd.DataFrame) -> dict:
                  f"<b>Каннибализация:</b> у {f['safia_close_pairs']} филиалов другая Safia в пределах {f['overlap_m']} м — "
                  "измерить влияние на продажи.",
                  "<b>Юг (C1–C5):</b> оценить спрос по продажам действующих южных филиалов."],
-        "foot": f"Код, интерактивная карта (uz/ru) и данные: <b>{REPO_URL}</b>. "
+        "foot": f"Интерактивная карта (uz/ru): <b>{MAP_URL}</b>. Код и данные: <b>{REPO_URL}</b>. "
                 "Источники: safiabakery.uz, cakelab.uz, OpenStreetMap, Управление статистики г. Ташкента (2023).",
     }
 

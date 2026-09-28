@@ -9,7 +9,7 @@ internal Safia data was used.
 | | |
 |---|---|
 | One-page report | [Uzbek](reports/safia_location_uz.pdf) · [Russian](reports/safia_location_ru.pdf) |
-| Interactive map (uz/ru) | [`outputs/maps/safia_whitespace.html`](outputs/maps/safia_whitespace.html). Download and open it in a browser. |
+| Interactive map (uz/ru) | **[Open in the browser](https://ibnmuxiddin.github.io/safia-location-study/outputs/maps/safia_whitespace.html)** (source: [`outputs/maps/safia_whitespace.html`](outputs/maps/safia_whitespace.html)) |
 | Findings with all numbers | [`docs/findings.md`](docs/findings.md) |
 
 ![Report preview](outputs/figures/12_report_preview_uz.png)
